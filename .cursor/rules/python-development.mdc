@@ -10,7 +10,7 @@ alwaysApply: true
 
 - **MANDATORY**: Use `uv` for all Python projects
 - **Install**: `uv add <package>`
-- **Run**: `uv run script.py`
+- **Run**: `uv run python -m mlb.script_name`
 - **NO**: Custom scripts like `uv run python -c "..."`
 
 ### **Modern Python Standards**
@@ -18,7 +18,7 @@ alwaysApply: true
 - **Python 3.12**: Required for all projects
 - **Modern Typing**: Use `list[T]`, `dict[K, V]`, `T | None` (not `List`, `Dict`, `Optional`)
 - **Type Annotations**: MANDATORY for all functions, methods, classes
-- **Absolute Imports**: Use `from mets.db import func` (not relative imports)
+- **Absolute Imports**: Use `from mlb.db import func` (not relative imports)
 
 ## Essential Setup
 
@@ -39,7 +39,7 @@ def analyze_data(df: pd.DataFrame) -> dict[str, float]:
 
 ## Project Structure
 
-- **Scripts**: Executable with `uv run`
+- **Scripts**: Executable with `uv run python -m mlb.script_name`
 - **Database**: PostgreSQL (not SQLite as previously mentioned)
 - **Server**: Assume localhost:8000 (never start manually)
 - **Comments**: Preserve existing comments when editing
