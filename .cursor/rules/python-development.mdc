@@ -1,0 +1,45 @@
+---
+alwaysApply: true
+---
+
+# Python Development Rules
+
+## 🚨 CRITICAL REQUIREMENTS
+
+### **UV Package Manager Only**
+
+- **MANDATORY**: Use `uv` for all Python projects
+- **Install**: `uv add <package>`
+- **Run**: `uv run script.py`
+- **NO**: Custom scripts like `uv run python -c "..."`
+
+### **Modern Python Standards**
+
+- **Python 3.12**: Required for all projects
+- **Modern Typing**: Use `list[T]`, `dict[K, V]`, `T | None` (not `List`, `Dict`, `Optional`)
+- **Type Annotations**: MANDATORY for all functions, methods, classes
+- **Absolute Imports**: Use `from mets.db import func` (not relative imports)
+
+## Essential Setup
+
+```python
+# Type annotations required
+def analyze_data(df: pd.DataFrame) -> dict[str, float]:
+    """Process data and return metrics."""
+    return {"mean": df.mean(), "std": df.std()}
+```
+
+## Code Quality
+
+- **Linter**: Ruff for style consistency
+- **Testing**: pytest only (no unittest)
+- **Tests Location**: `./tests/` directory with `__init__.py`
+- **Logging**: Use loguru
+- **Documentation**: PEP 257 compliant docstrings
+
+## Project Structure
+
+- **Scripts**: Executable with `uv run`
+- **Database**: PostgreSQL (not SQLite as previously mentioned)
+- **Server**: Assume localhost:8000 (never start manually)
+- **Comments**: Preserve existing comments when editing
