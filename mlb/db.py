@@ -29,7 +29,7 @@ def get_database_engine():
         ValueError: If POSTGRES_URL environment variable is not set
         SQLAlchemyError: If connection to database fails
     """
-    postgres_url = "postgresql://postgres:JowubEqDE6CAeo8n@db.puypgkbuvmkrbhpuunij.supabase.co:5432/postgres"
+    postgres_url = "postgresql://postgres.puypgkbuvmkrbhpuunij:JowubEqDE6CAeo8n@aws-1-us-east-2.pooler.supabase.com:6543/postgres"
 
     if not postgres_url:
         raise ValueError(
